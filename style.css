@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandiflora+One&family=Kablammo&family=Open+Sans:ital,wght@1,300&family=Poppins:wght@500&display=swap");
+* {
+ scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+ width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+ background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+ background: greenyellow;
+}
+
+body {
+ font-family: "Poppins", sans-serif;
+ overflow-x: hidden !important;
+ margin: 0;
+ padding: 0;
+ min-height: 100vh;
+ box-sizing: border-box;
+ background-color: #202124;
+}
+nav {
+ position: fixed;
+ width: 100%;
+ height: auto;
+ background: rgba(0, 0, 0, 0.47);
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(6.2px);
+ -webkit-backdrop-filter: blur(6.2px);
+ z-index: 2;
+}
+ul {
+ padding: 0px;
+ display: flex;
+ justify-content: end;
+ align-items: center;
+ margin: 0px;
+}
+ul li {
+ color: black;
+ margin: 15px;
+ padding: 15px;
+ list-style: none;
+ cursor: pointer;
+ text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+}
+#femprish {
+ width: 150px;
+ position: absolute;
+ left: -10px;
+ top: 20px;
+ padding-left: 30px;
+ transition: all 300ms ease-in-out;
+}
+#nav {
+ display: none;
+ color: white;
+}
+
+#elements {
+ font-size: 18px;
+ color: white;
+ position: relative;
+ right: -60px;
+ transition: all 300ms ease-in-out;
+ border-radius: 50px;
+}
+
+.box {
+ text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+ position: fixed;
+ background: rgba(0, 0, 0, 0.29);
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(6.4px);
+ -webkit-backdrop-filter: blur(6.4px);
+ width: 100%;
+ top: 0px;
+ display: none;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+ z-index: 2;
+}
+
+.box.active {
+ animation: fade-in 400ms linear;
+}
+
+.box.remove {
+ animation: fade-out 400ms linear;
+}
+
+.box .fa-solid {
+ font-size: 30px;
+ position: fixed;
+ top: 12px;
+ right: 12px;
+ cursor: pointer;
+}
+
+.social {
+ margin-top: 20px;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+ /* position: absolute; */
+ /* bottom: 20px; */
+}
+
+.social i {
+ padding: 10px;
+ font-size: 25px;
+}
+
+@keyframes fade-in {
+ 0% {
+  -webkit-clip-path: circle(0% at 50% 50%);
+  clip-path: circle(0% at 50% 50%);
+ }
+
+ 50% {
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+ }
+
+ 100% {
+  -webkit-clip-path: circle(100% at 50% 50%);
+  clip-path: circle(100% at 50% 50%);
+ }
+}
+
+@keyframes fade-out {
+ 0% {
+  -webkit-clip-path: circle(100% at 50% 50%);
+  clip-path: circle(100% at 50% 50%);
+ }
+
+ 50% {
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+ }
+
+ 100% {
+  -webkit-clip-path: circle(0% at 50% 50%);
+  clip-path: circle(0% at 50% 50%);
+ }
+}
+
+.header {
+ background-attachment: fixed;
+ background-repeat: no-repeat;
+ background-position: top;
+ background-size: cover;
+ background-image: url("feminism 2.jpg");
+ height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ flex-wrap: wrap;
+}
+
+#header-text {
+ /* position: absolute; */
+ color: white;
+ font-size: 50px;
+ text-align: center;
+ z-index: 1;
+ text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+}
+
+/* this button is inspired from this -- https://www.newline.co/pricing */
+button {
+ margin-top: 30px;
+ --width: 150px;
+ --timing: 2s;
+ border: 0;
+ width: var(--width);
+ padding-block: 1em;
+ color: #fff;
+ font-weight: bold;
+ font-size: 1em;
+ background: rgb(64, 192, 87);
+ transition: all 0.2s;
+ border-radius: 3px;
+ cursor: pointer;
+ box-shadow: 0px 0px 25px 1px rgba(0, 0, 0, 1);
+}
+
+button:hover {
+ background-image: linear-gradient(
+  to right,
+  rgb(250, 82, 82),
+  rgb(250, 82, 82) 16.65%,
+  rgb(190, 75, 219) 16.65%,
+  rgb(190, 75, 219) 33.3%,
+  rgb(76, 110, 245) 33.3%,
+  rgb(76, 110, 245) 49.95%,
+  rgb(64, 192, 87) 49.95%,
+  rgb(64, 192, 87) 66.6%,
+  rgb(250, 176, 5) 66.6%,
+  rgb(250, 176, 5) 83.25%,
+  rgb(253, 126, 20) 83.25%,
+  rgb(253, 126, 20) 100%,
+  rgb(250, 82, 82) 100%
+ );
+ animation: var(--timing) linear dance6123 infinite;
+ transform: scale(1.1) translateY(-1px);
+}
+
+@keyframes dance6123 {
+ to {
+  background-position: var(--width);
+ }
+}
+.news {
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+ /* border: 2px solid red; */
+}
+
+.boxes {
+ margin: 15px;
+ width: 18em;
+ overflow: hidden;
+ max-height: 25em;
+ background-image: url("green\ lead.jpg");
+ background-attachment: fixed;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ color: white;
+ border: 1px solid snow;
+ text-align: start;
+}
+.boxes:nth-last-child(1) {
+ max-height: 24.5em !important;
+}
+.boxes:hover {
+ color: rgb(255, 50, 100);
+}
+
+#news-text {
+ font-size: 25px;
+ padding: 0px 20px 0px 20px;
+ /* border: 1px solid red; */
+}
+#count {
+ position: relative;
+ left: 9em;
+ bottom: -0.5em;
+ color: white;
+}
+.con-like {
+ --red: rgb(255, 50, 100);
+ position: relative;
+ width: 25px;
+ height: 25px;
+ left: 12em;
+ bottom: 2em;
+}
+
+.con-like .like {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ opacity: 0;
+ z-index: 20;
+ cursor: pointer;
+}
+
+.con-like .checkmark {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.con-like .outline,
+.con-like .filled {
+ fill: var(--red);
+ position: absolute;
+}
+
+.con-like .filled {
+ animation: kfr-filled 0.5s;
+ display: none;
+}
+
+.con-like .celebrate {
+ position: absolute;
+ animation: kfr-celebrate 0.5s;
+ animation-fill-mode: forwards;
+ display: none;
+}
+
+.con-like .poly {
+ stroke: var(--red);
+ fill: var(--red);
+}
+
+.con-like .like:checked ~ .checkmark .filled {
+ display: block;
+}
+
+.con-like .like:checked ~ .checkmark .celebrate {
+ display: block;
+}
+
+@keyframes kfr-filled {
+ 0% {
+  opacity: 0;
+  transform: scale(0);
+ }
+
+ 50% {
+  opacity: 1;
+  transform: scale(1.2);
+ }
+}
+
+@keyframes kfr-celebrate {
+ 0% {
+  transform: scale(0);
+ }
+
+ 50% {
+  opacity: 0.8;
+ }
+
+ 100% {
+  transform: scale(1.2);
+  opacity: 0;
+  display: none;
+ }
+}
+/* <===================== Socials Icon ===================> */
+.socials {
+ display: flex;
+ flex-direction: column;
+ background-color: green;
+ justify-content: center;
+ align-items: center;
+ overflow: hidden;
+ position: fixed;
+ right: -30px;
+ top: 50%;
+ transform: translate(-50%, -50%);
+ width: 50px;
+ height: 180px;
+ z-index: 2;
+}
+.quote {
+ margin-top: 50px;
+ overflow: hidden;
+ display: flex;
+ background-color: #1a3270;
+ min-height: 25vh;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ text-align: center;
+ font-style: italic;
+ color: white;
+ letter-spacing: 2px;
+ font-family: "Open Sans", sans-serif !important;
+}
+@media (max-width: 768px) {
+ #elements {
+  display: none;
+ }
+
+ #nav {
+  display: flex;
+  position: relative;
+  right: 0px;
+  font-size: 25px;
+ }
+ #header-text {
+  font-size: 30px;
+ }
+ .header {
+  background-size: 210% 100%;
+ }
+ .socials {
+  display: none;
+ }
+}
+footer {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: white;
+ min-height: 50px;
+ text-align: center;
+ background-color: darkgreen;
+}
